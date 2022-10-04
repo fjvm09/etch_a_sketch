@@ -56,7 +56,7 @@ function setGrid(y){
     deleteGrid();
     makeGrid(y)
     for(let child of document.querySelectorAll('.child')){
-        child.addEventListener('mousemove', changeColor);
+        child.addEventListener('mouseenter', changeColor);
     }
 }
 const grids = document.querySelectorAll('.child');
@@ -65,14 +65,14 @@ function changeColor(e){
     this.style.backgroundColor = `rgba(${random(255)}, ${random(255)}, ${random(255)}`;
 }
 function clearColor(){
-    grids.forEach(function(child){
-        child.style.backgroundColor = 'white';
-    })
+    for(let child of document.querySelectorAll('.child')){
+        child.style.backgroundColor = 'white'
+    }
 }
 
 
 grids.forEach(function(child){
-    child.addEventListener('mousemove', changeColor)
+    child.addEventListener('mouseenter', changeColor)
 })
 
 //container.addEventListener('mouseover', changeColor, true);
